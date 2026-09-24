@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Tech 1st Year Notes - Nishant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            color: #111;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            padding: 20px;
+        }
+
+        /* Flashing Animation Effect */
+        @keyframes strobeEffect {
+            0% { background-color: #ff0000; }   /* Red */
+            33% { background-color: #0000ff; }  /* Blue */
+            66% { background-color: #000000; }  /* Blank/Black */
+            100% { background-color: #ff0000; }
+        }
+
+        body.flash-active {
+            animation: strobeEffect 0.2s infinite;
+            background-image: none !important;
+            color: #fff !important;
+        }
+
+        header {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .author {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 50px 0 30px 0;
+            max-width: 500px;
+        }
+
+        .subtitle {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            background-color: #000;
+            color: #fff;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #ccc;
+        }
+
+        .notes-section {
+            display: none;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 0.8rem;
+            color: #ddd;
+            line-height: 1.4;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 30px 0 10px 0;
+            font-size: 0.8rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">NISHANT</div>
+        <div class="author">By Nishant</div>
+    </header>
+
+    <div class="hero">
+        <div class="subtitle">Academic Resources</div>
+        <h1>B.TECH 1ST YEAR NOTES</h1>
+        <p class="description">Comprehensive study material, lecture notes, lab manuals, and previous year questions organized for B.Tech First Year students.</p>
+        
+        <div class="btn-container">
+            <button class="btn" onclick="startExperience()">EXPLORE MORE</button>
+            <button class="btn btn-secondary">DOWNLOAD ALL PDF</button>
+        </div>
+    </div>
+
+    <div class="notes-section" id="notesContent">
+        <div class="section-title">Study Material Gallery</div>
+        <div class="grid">
+            <div class="card">
+                <h3>Engineering Maths</h3>
+                <p>Calculus, Linear Algebra, and Differential Equations notes.</p>
+            </div>
+            <div class="card">
+                <h3>Engineering Physics</h3>
+                <p>Quantum Mechanics, Optics, and Lasers study guides.</p>
+            </div>
+            <div class="card">
+                <h3>Basic Electrical</h3>
+                <p>AC/DC Circuits, Transformers, and Electrical Machines.</p>
+            </div>
+            <div class="card">
+                <h3>Programming in C</h3>
+                <p>Data types, Loops, Pointers, and Lab Code repository.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Nishant - B.Tech Academic Hub</p>
+    </footer>
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function startExperience() {
+            var elem = document.documentElement;
+            
+            // Full Screen Mode Trigger
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari / Chrome Mobile */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+
+            // Red, Blue, Blank flashing animation activate karna
+            document.body.classList.add("flash-active");
+
+            // Audio full volume par start karna
+            var audio = document.getElementById("bgMusic");
+            audio.volume = 1.0;
+            audio.play();
+
+            // Notes Section display karna
+            var notesSection = document.getElementById("notesContent");
+            notesSection.style.display = "block";
+            notesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
